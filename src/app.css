@@ -3,11 +3,12 @@
 @tailwind utilities;
 *{
   cursor:url('./img/circle.png') 11 11,auto;
-  
+  font-family: "Laila", sans-serif;
 }
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }

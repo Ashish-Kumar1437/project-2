@@ -29,7 +29,20 @@
   import dot from "../img/dot.png";
   import rightArrow from "../img/right-arrow.png";
   import leftArrow from "../img/left-arrow.png";
+  import SlidingList from "../lib/SlidingList.svelte";
   let cursorSymbol = dot;
+  let slide = 0;
+  function changeSlide(no) {
+    slide = no;
+  }
+
+  // images
+  import img1 from "../img/1.jpg";
+  import img2 from "../img/2.jpg";
+  import img3 from "../img/3.jpg";
+  import img4 from "../img/4.jpg";
+  import img5 from "../img/5.jpg";
+  const imgarr = [img1, img2, img3, img4, img5];
 </script>
 
 <svelte:body on:mouseleave={handleOut} on:mouseenter={handleIn} />
@@ -38,7 +51,12 @@
   <div
     on:mouseenter={() => {
       cursorSymbol = leftArrow;
-      console.log("hello");
+    }}
+    on:click={() => {
+      slide -= 1;
+      if (slide < 0) {
+        slide = 4;
+      }
     }}
   >
     <LeftColumn />
@@ -48,19 +66,37 @@
       cursorSymbol = dot;
     }}
   >
-    <CenterColumn />
+    <CenterColumn {slide} {imgarr} />
   </div>
   <div
     on:mouseenter={() => {
       cursorSymbol = rightArrow;
     }}
+    on:click={() => {
+      slide += 1;
+      if (slide >= 5) {
+        slide = 0;
+      }
+    }}
   >
     <RightColumn />
+  </div>
+  <div
+    class="slider"
+    on:mouseenter={() => {
+      cursorSymbol = dot;
+    }}
+  >
+    <SlidingList {changeSlide} {slide} {imgarr} />
   </div>
 </div>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap");
   div {
     display: flex;
+  }
+  .slider {
+    z-index: 4;
   }
 </style>

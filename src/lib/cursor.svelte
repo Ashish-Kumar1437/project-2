@@ -19,6 +19,8 @@
   .circle {
     display: inline-block;
     position: fixed;
+    z-index: 999;
+    pointer-events: none;
     /* border: 2px solid black; */
     /* background-color: black;s */
     width: 10px;

@@ -6,6 +6,6 @@
     z-index: 1;
     width: 10vw;
     height: 100vh;
-    border-right: 2px solid black;
+    border-right: 2px solid white;
   }
 </style>

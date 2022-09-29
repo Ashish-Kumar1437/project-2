@@ -7,6 +7,6 @@
     z-index: 2;
     width: 10vw;
     height: 100vh;
-    border-left: 2px solid black;
+    border-left: 2px solid white;
   }
 </style>
