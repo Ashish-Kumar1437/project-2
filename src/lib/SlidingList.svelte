@@ -4,7 +4,6 @@
     menu = menu == 0 ? 1 : 0;
   }
   export let changeSlide, slide, imgarr;
-  import img1 from "../img/1.jpg";
 </script>
 
 <div class="togglebtn {menu == 0 ? '' : 'active'}" on:click={togglemenu}>
@@ -18,41 +17,18 @@
 >
   <div class="before" style={`background: url(${imgarr[4 - slide]}) right;`} />
   <ul>
-    <li
-      on:click={() => {
-        changeSlide(0);
-      }}
-    >
-      <span class="SNo">1.</span>Thought
-    </li>
-    <li
-      on:click={() => {
-        changeSlide(1);
-      }}
-    >
-      <span class="SNo">2.</span>Thought
-    </li>
-    <li
-      on:click={() => {
-        changeSlide(2);
-      }}
-    >
-      <span class="SNo">3.</span>Thought
-    </li>
-    <li
-      on:click={() => {
-        changeSlide(3);
-      }}
-    >
-      <span class="SNo">4.</span>Thought
-    </li>
-    <li
-      on:click={() => {
-        changeSlide(4);
-      }}
-    >
-      <span class="SNo">5.</span>Thought
-    </li>
+    {#each { length: 5 } as _, i}
+      <li
+        on:click={() => {
+          setTimeout(() => {
+            changeSlide(i);
+          }, 1000);
+          menu = 0;
+        }}
+      >
+        <span class="SNo">{i + 1}.</span>Thought
+      </li>
+    {/each}
   </ul>
 </div>
 
@@ -98,8 +74,6 @@
   .togglebtn.active .line:last-child {
     transform: translateY(-6px);
   }
-  /* transform: translateY(7px) rotate(90deg);
-    transform: translate(-7vw, 20px) rotate(45deg); */
   .before {
     position: absolute;
     z-index: -1;
