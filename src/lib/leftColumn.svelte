@@ -3,6 +3,7 @@
 <style>
   .container {
     position: absolute;
+    left: 18px;
     z-index: 4;
     width: 10vw;
     height: 100vh;

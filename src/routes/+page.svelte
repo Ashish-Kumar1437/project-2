@@ -107,13 +107,10 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    position: relative;
   }
   .slider {
     z-index: 4;
+    position: relative;
   }
-  /* .check {
-    width: 100vw;
-    height: 100vh;
-    background-color: aqua;
-  } */
 </style>

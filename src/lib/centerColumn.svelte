@@ -34,7 +34,7 @@
   </div>
   <div
     class="mimg-container"
-    style={`transform: translateX(-${401 - slide * 100}vw)`}
+    style={`transform: translateX(-${400 - slide * 100}vw)`}
   >
     {#each { length: 5 } as _, i}
       <div>
@@ -48,7 +48,7 @@
   </div>
   <div
     class="background-container"
-    style={`transform: translateX(-${401 - slide * 100}vw)`}
+    style={`transform: translateX(-${400 - slide * 100}vw)`}
   >
     {#each { length: 5 } as _, i}
       <img
@@ -65,6 +65,7 @@
     min-height: 100vh;
     min-width: 100vw;
     overflow: hidden;
+    position: relative;
   }
   .text-container {
     display: flex;

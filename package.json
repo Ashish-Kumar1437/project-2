@@ -21,6 +21,7 @@
 	"type": "module",
 	"dependencies": {
 		"bootstrap": "^5.2.1",
+		"gsap": "^3.11.2",
 		"three": "^0.144.0"
 	}
 }

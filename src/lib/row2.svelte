@@ -34,14 +34,20 @@
       class="imgs"
       style={`transform:translate(${flag == 0 ? 16 : 1}vw,${
         flag == 0 ? 16 : 1
-      }vw)`}
+      }vw);opacity:${flag}`}
     >
       <img src={template1} alt="t1" />
     </div>
-    <div class="imgs" style={`transform:translateX(${flag == 0 ? 16 : 1}vw)`}>
+    <div
+      class="imgs"
+      style={`transform:translateX(${flag == 0 ? 16 : 1}vw); opacity:${flag}`}
+    >
       <img src={template2} alt="t2" />
     </div>
-    <div class="imgs" style={`transform:translateY(${flag == 0 ? 16 : 1}vw)`}>
+    <div
+      class="imgs"
+      style={`transform:translateY(${flag == 0 ? 16 : 1}vw);opacity:${flag}`}
+    >
       <img src={template3} alt="t3" />
     </div>
   </div>
@@ -49,19 +55,22 @@
 
 <style>
   .container {
-    width: 100vw;
+    min-width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 0;
   }
   .box.active {
+    transform: scale(1);
+  }
+  .box {
+    transform: scale(0.5);
     width: 75vw;
     height: 70vh;
     padding: 10vw;
-  }
-  .box {
     background: linear-gradient(
       145deg,
       blue,
@@ -73,47 +82,31 @@
       red,
       red
     );
-    width: 30vw;
-    height: 30vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* align-items: cent; */
-    padding: 3vw;
     transition: all 1s;
   }
-  .box.active > .text {
-    font-size: 3rem;
-    width: 40vw;
-  }
   .text {
-    font-size: 1rem;
+    font-size: 4vw;
+    width: 40vw;
     font-weight: 900;
     color: white;
-    width: 10vw;
-  }
-  .box.active > .subtext {
-    font-size: 1.2rem;
   }
   .subtext {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: rgb(177, 175, 175);
     margin-top: 10px;
   }
-  .box.active > .button {
+  .button {
     width: 20vw;
     font-size: 1rem;
     margin-top: 30px;
-  }
-  .button {
     background-color: red;
-    width: 10vw;
     text-align: center;
     border-radius: 20vw;
-    margin-top: 10px;
     padding: 1%;
-    font-size: 0.5rem;
     color: white;
   }
   .imgBox {
