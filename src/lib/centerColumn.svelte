@@ -96,8 +96,8 @@
     transition: all 1s;
   }
   .bg {
-    width: 100%;
-    height: 100%;
+    min-width: 100vw;
+    height: 100vh;
     z-index: -1;
   }
   .mimg {

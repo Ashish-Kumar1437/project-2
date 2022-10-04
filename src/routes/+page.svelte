@@ -42,12 +42,19 @@
   import img3 from "../img/3.jpg";
   import img4 from "../img/4.jpg";
   import img5 from "../img/5.jpg";
+  import circle from "../img/circle.png";
+  import Row2 from "../lib/row2.svelte";
   const imgarr = [img1, img2, img3, img4, img5];
 </script>
 
-<svelte:body on:mouseleave={handleOut} on:mouseenter={handleIn} />
+<svelte:body />
 <Cursor class="circle" img={cursorSymbol} />
-<div>
+<div
+  class="row1"
+  style={`cursor: url(${circle}) 11 11, auto;`}
+  on:mouseleave={handleOut}
+  on:mouseenter={handleIn}
+>
   <div
     on:mouseenter={() => {
       cursorSymbol = leftArrow;
@@ -91,12 +98,22 @@
   </div>
 </div>
 
+<Row2 />
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap");
-  div {
+  .row1 {
     display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
   .slider {
     z-index: 4;
   }
+  /* .check {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+  } */
 </style>

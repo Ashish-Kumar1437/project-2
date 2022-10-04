@@ -23,7 +23,7 @@
   }
   .name {
     /* background-color: violet; */
-    font-size: 4rem;
+    font-size: 5vw;
     width: 20vw;
     margin-right: 5rem;
     color: white;
@@ -34,10 +34,10 @@
     color: white;
   }
   .number {
-    font-size: 2rem;
+    font-size: 2.5vw;
     font-weight: 900;
   }
   .content {
-    font-size: 1.5rem;
+    font-size: 2vw;
   }
 </style>

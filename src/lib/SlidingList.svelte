@@ -36,7 +36,7 @@
   .container {
     width: 30vw;
     height: 100vh;
-    font-size: 3rem;
+    font-size: 3vw;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
@@ -45,6 +45,9 @@
     color: white;
     /* transform: translateX(-30vw); */
     transition: transform 1s;
+    position: absolute;
+    top: 0;
+    z-index: -1;
   }
   .togglebtn {
     transform: translate(-7vw, 20px);

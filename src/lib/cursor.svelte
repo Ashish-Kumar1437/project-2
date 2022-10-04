@@ -1,8 +1,8 @@
 <script>
   function handleMouse(e) {
     const circle = document.querySelector(".circle");
-    const mouseX = e.pageX + 6;
-    const mouseY = e.pageY + 6;
+    const mouseX = e.clientX + 6;
+    const mouseY = e.clientY + 6;
     circle.style.top = `${mouseY}px`;
     circle.style.left = `${mouseX}px`;
   }
