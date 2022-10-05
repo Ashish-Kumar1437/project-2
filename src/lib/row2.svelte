@@ -70,7 +70,7 @@
     transform: scale(0.5);
     width: 75vw;
     height: 70vh;
-    padding: 10vw;
+    padding: 7vw;
     background: linear-gradient(
       145deg,
       blue,
@@ -128,5 +128,33 @@
   }
   .imgs > img {
     transform: rotate3d(2, 3, 2, 322deg);
+  }
+  @media screen and (max-width: 1100px) {
+    .text {
+      width: 50vw;
+    }
+    .imgBox {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .text {
+      width: 70vw;
+    }
+    .imgBox {
+      display: none;
+    }
+    .box {
+      height: 50vh;
+    }
+    .button {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .box {
+      padding: 3vw;
+    }
   }
 </style>

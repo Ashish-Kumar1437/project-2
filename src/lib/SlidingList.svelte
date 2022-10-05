@@ -11,10 +11,7 @@
   <span class="line" />
   <span class="line" />
 </div>
-<div
-  class="container"
-  style={`transform: translateX(${menu == 0 ? 0 : -30}vw);`}
->
+<div class={`container ${menu == 0 ? "" : "active"} `}>
   <div class="before" style={`background: url(${imgarr[4 - slide]}) right;`} />
   <ul>
     {#each { length: 5 } as _, i}
@@ -43,11 +40,14 @@
     justify-content: center;
     align-items: center;
     color: white;
-    /* transform: translateX(-30vw); */
+    transform: translateX(0vw);
     transition: transform 1s;
     position: absolute;
     top: 0;
     z-index: -1;
+  }
+  .container.active {
+    transform: translateX(-30vw);
   }
   .togglebtn {
     transform: translate(-7vw, 20px);
@@ -84,5 +84,35 @@
     width: 30vw;
     filter: blur(5px);
     background-position: right;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .togglebtn {
+      transform: translate(-14vw, 4vh);
+    }
+    .togglebtn.active {
+      transform: translate(-14vw, 4vh) rotate(45deg);
+    }
+    .line {
+      width: 4vw;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .line {
+      width: 5vw;
+    }
+    .container.active {
+      transform: translateX(-100vw);
+    }
+    .container {
+      width: 100vw;
+    }
+    .before {
+      width: 100vw;
+    }
+    ul {
+      width: 50vw;
+      font-size: 2rem;
+    }
   }
 </style>

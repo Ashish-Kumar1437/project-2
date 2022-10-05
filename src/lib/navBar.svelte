@@ -7,10 +7,6 @@
     <div class="logo">
       <img src={logo} alt="logo" />
     </div>
-    <div class="name">
-      <span>Slider</span>
-      <span>Revolution</span>
-    </div>
   </div>
   <div class="col2">
     <span>Motion Blur Portfolio Showcase - Slider Template</span>
@@ -25,9 +21,9 @@
   nav {
     position: sticky;
     top: 0;
-    padding: 4px 25px;
+    padding: 8px 25px;
     width: 100vw;
-    background-color: aqua;
+    background-color: blueviolet;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -36,25 +32,11 @@
     z-index: 10;
   }
   img {
-    width: 4vw;
-    height: 4vw;
+    max-width: 140px;
+    height: auto;
   }
   .col1 {
     display: flex;
-  }
-  .name {
-    display: flex;
-    flex-direction: column;
-  }
-  .name span {
-    text-transform: uppercase;
-  }
-  .name span:first-child {
-    font-weight: 900;
-    font-size: 1.5rem;
-  }
-  .name span:last-child {
-    font-size: 0.8rem;
   }
   .btn {
     background-color: red;
@@ -63,5 +45,37 @@
     border-radius: 15px;
     cursor: pointer;
     font-size: 0.8em;
+  }
+  @media screen and (max-width: 1000px) {
+    .col2 {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    nav {
+      padding: 10px 22px;
+      justify-content: space-between;
+    }
+    .logo > img {
+      width: 110px;
+    }
+    .col2 {
+      display: none;
+    }
+    .btn {
+      font-size: 0.6rem;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    nav {
+      padding: 10px 12px;
+    }
+    .logo > img {
+      width: 110px;
+    }
+    .btn {
+      font-size: 0.5rem;
+      padding: 5px 10px;
+    }
   }
 </style>

@@ -54,9 +54,27 @@ const raycaster=new THREE.Raycaster();
 
 //Texture Loader
 const loader=new THREE.TextureLoader();
+let imgheight=10.3;
+let imgwidth=20;
+let imgGap=12;
+let imgAway=8;
+
+if(window.innerWidth<800){
+    imgAway=0;
+}
+ if(window.innerWidth<500){
+    imgwidth=8;
+    imgheight=4.3;
+    imgGap=5
+}
+else if(window.innerWidth<900){
+    imgwidth=15;
+    imgheight=7.3;
+    imgGap=8
+}
 
 //imgs
-const imgGeometry=new THREE.PlaneGeometry(20,10.3);
+const imgGeometry=new THREE.PlaneGeometry(imgwidth,imgheight);
 const images=[img0,img1,img2,img3,img4,img5,img6,img7,img8]
 const imgObj=[];
 for(let i=0;i<9;i++){
@@ -65,7 +83,7 @@ for(let i=0;i<9;i++){
         side:THREE.DoubleSide
     })
     const img=new THREE.Mesh(imgGeometry,imgMaterial);
-    img.position.set(8+(Math.random()*5),-25-i*12,0);
+    img.position.set(imgAway+(Math.random()*5),-25-i*imgGap,0);
     scene.add(img);
     imgObj.push(img);
 }
@@ -92,7 +110,7 @@ function animate(){
     position +=y *0.08;
     y*=0.9;
     position = position < 0 ? 0 : position
-    position = position > 125 ? 125 : position
+    position = position > 25+9*imgGap ? 25+9*imgGap : position
     camera.position.y=-position
 
     raycaster.setFromCamera(mouse,camera);

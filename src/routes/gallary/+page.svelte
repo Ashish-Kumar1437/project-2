@@ -9,3 +9,9 @@
 
 <svelte:window />
 <canvas bind:this={el} />
+
+<style>
+  canvas {
+    width: 100vw !important;
+  }
+</style>

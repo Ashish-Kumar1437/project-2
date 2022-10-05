@@ -9,4 +9,10 @@
     height: 100vh;
     border-left: 2px solid white;
   }
+  @media screen and (max-width: 1200px) {
+    .container {
+      width: 40vw;
+      border: none;
+    }
+  }
 </style>

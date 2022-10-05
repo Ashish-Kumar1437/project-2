@@ -40,4 +40,15 @@
   .content {
     font-size: 2vw;
   }
+  @media screen and (max-width: 600px) {
+    .name {
+      font-size: 7vw;
+    }
+    .number {
+      font-size: 4.5vw;
+    }
+    .content {
+      font-size: 4vw;
+    }
+  }
 </style>

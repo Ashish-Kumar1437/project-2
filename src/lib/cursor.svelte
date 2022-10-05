@@ -28,4 +28,9 @@
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
+  @media screen and (max-width: 600px) {
+    .circle {
+      display: none !important;
+    }
+  }
 </style>
