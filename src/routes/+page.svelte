@@ -44,6 +44,8 @@
   import img5 from "../img/5.jpg";
   import circle from "../img/circle.png";
   import Row2 from "../lib/row2.svelte";
+  import Row3 from "../lib/row3.svelte";
+  import Row4 from "../lib/row4.svelte";
   const imgarr = [img1, img2, img3, img4, img5];
 </script>
 
@@ -99,6 +101,8 @@
 </div>
 
 <Row2 />
+<Row3 />
+<Row4 />
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap");

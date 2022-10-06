@@ -69,8 +69,8 @@
   .box {
     transform: scale(0.5);
     width: 75vw;
-    height: 70vh;
-    padding: 7vw;
+    min-height: 70vh;
+    padding: 5vw;
     background: linear-gradient(
       145deg,
       blue,
@@ -111,12 +111,12 @@
   }
   .imgBox {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -25px;
+    right: 30px;
     display: flex;
-    width: 40vw;
+    width: 45vw;
     flex-wrap: wrap;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
     transform: translate(-6vw, -20vh);
   }
@@ -131,7 +131,7 @@
   }
   @media screen and (max-width: 1100px) {
     .text {
-      width: 50vw;
+      width: 60vw;
     }
     .imgBox {
       flex-direction: column;
@@ -145,7 +145,7 @@
       display: none;
     }
     .box {
-      height: 50vh;
+      min-height: 40vh;
     }
     .button {
       font-size: 0.7rem;

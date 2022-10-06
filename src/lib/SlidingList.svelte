@@ -11,7 +11,7 @@
   <span class="line" />
   <span class="line" />
 </div>
-<div class={`container ${menu == 0 ? "" : "active"} `}>
+<div class={`Container ${menu == 0 ? "" : "active"} `}>
   <div class="before" style={`background: url(${imgarr[4 - slide]}) right;`} />
   <ul>
     {#each { length: 5 } as _, i}
@@ -30,7 +30,7 @@
 </div>
 
 <style>
-  .container {
+  .Container {
     width: 30vw;
     height: 100vh;
     font-size: 3vw;
@@ -46,7 +46,7 @@
     top: 0;
     z-index: -1;
   }
-  .container.active {
+  .Container.active {
     transform: translateX(-30vw);
   }
   .togglebtn {
@@ -88,23 +88,23 @@
 
   @media screen and (max-width: 1000px) {
     .togglebtn {
-      transform: translate(-14vw, 4vh);
+      transform: translate(-10vw, 4vh);
     }
     .togglebtn.active {
-      transform: translate(-14vw, 4vh) rotate(45deg);
+      transform: translate(-10vw, 4vh) rotate(45deg);
     }
     .line {
       width: 4vw;
     }
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 700px) {
     .line {
       width: 5vw;
     }
-    .container.active {
+    .Container.active {
       transform: translateX(-100vw);
     }
-    .container {
+    .Container {
       width: 100vw;
     }
     .before {

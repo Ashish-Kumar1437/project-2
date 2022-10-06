@@ -23,9 +23,9 @@
   }
 </script>
 
-<div class="container" on:mousemove={moveImg}>
+<div class="Container" on:mousemove={moveImg}>
   <div
-    class="text-container"
+    class="text-Container"
     style={`transform: translateX(-${slide * 100}vw)`}
   >
     {#each thoughts as thought, i}
@@ -33,7 +33,7 @@
     {/each}
   </div>
   <div
-    class="mimg-container"
+    class="mimg-Container"
     style={`transform: translateX(-${400 - slide * 100}vw)`}
   >
     {#each { length: 5 } as _, i}
@@ -47,7 +47,7 @@
     {/each}
   </div>
   <div
-    class="background-container"
+    class="background-Container"
     style={`transform: translateX(-${400 - slide * 100}vw)`}
   >
     {#each { length: 5 } as _, i}
@@ -61,13 +61,13 @@
 </div>
 
 <style>
-  .container {
+  .Container {
     min-height: 100vh;
     min-width: 100vw;
     overflow: hidden;
     position: relative;
   }
-  .text-container {
+  .text-Container {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -75,8 +75,8 @@
     transition-timing-function: cubic-bezier(0, 0.5, 0.75, 1);
     z-index: 10;
   }
-  .background-container,
-  .mimg-container {
+  .background-Container,
+  .mimg-Container {
     display: flex;
     position: absolute;
     min-height: 100vh;
@@ -86,13 +86,13 @@
     transition: all 1s 0.2s;
     transition-timing-function: cubic-bezier(0, 0.5, 0.75, 1);
   }
-  .mimg-container > div {
+  .mimg-Container > div {
     min-width: 100vw;
     position: relative;
     max-height: 100vh;
     min-height: 100vh;
   }
-  .mimg-container {
+  .mimg-Container {
     z-index: 1;
     transition: all 1s;
   }
