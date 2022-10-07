@@ -1,18 +1,3 @@
-<!-- <script>
-  import { onMount } from "svelte";
-  import { rotatingCube } from "../lib/cube";
-  import Cursor from "../lib/cursor.svelte";
-
-  let el;
-
-  onMount(() => {
-    rotatingCube(el);
-  });
-</script>
-
-<Cursor />
-
-<canvas bind:this={el} /> -->
 <script>
   import CenterColumn from "../lib/centerColumn.svelte";
   import LeftColumn from "../lib/leftColumn.svelte";
@@ -46,7 +31,12 @@
   import Row2 from "../lib/row2.svelte";
   import Row3 from "../lib/row3.svelte";
   import Row4 from "../lib/row4.svelte";
+  import Row5 from "../lib/row5.svelte";
+  import { onMount } from "svelte";
   const imgarr = [img1, img2, img3, img4, img5];
+  onMount(() => {
+    handleOut();
+  });
 </script>
 
 <svelte:body />
@@ -103,6 +93,7 @@
 <Row2 />
 <Row3 />
 <Row4 />
+<Row5 />
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap");

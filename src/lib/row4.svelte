@@ -36,6 +36,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    cursor: default;
   }
   .box {
     max-width: 80vw;
@@ -92,6 +93,11 @@
     color: white;
     margin-top: 30px;
     font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.5s;
+  }
+  .button:hover {
+    background-color: aqua;
   }
   @media screen and (max-width: 800px) {
     .content {
