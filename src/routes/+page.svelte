@@ -33,6 +33,7 @@
   import Row4 from "../lib/row4.svelte";
   import Row5 from "../lib/row5.svelte";
   import { onMount } from "svelte";
+  import Row6 from "../lib/row6.svelte";
   const imgarr = [img1, img2, img3, img4, img5];
   onMount(() => {
     handleOut();
@@ -94,6 +95,7 @@
 <Row3 />
 <Row4 />
 <Row5 />
+<Row6 />
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Laila:wght@500&display=swap");
