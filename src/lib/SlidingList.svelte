@@ -3,7 +3,7 @@
   function togglemenu() {
     menu = menu == 0 ? 1 : 0;
   }
-  export let changeSlide, slide, imgarr;
+  export let changeSlideNum;
 </script>
 
 <div class="togglebtn {menu == 0 ? '' : 'active'}" on:click={togglemenu}>
@@ -12,13 +12,13 @@
   <span class="line" />
 </div>
 <div class={`Container ${menu == 0 ? "" : "active"} `}>
-  <div class="before" style={`background: url(${imgarr[4 - slide]}) right;`} />
+  <div class="before" />
   <ul>
     {#each { length: 5 } as _, i}
       <li
         on:click={() => {
           setTimeout(() => {
-            changeSlide(i);
+            changeSlideNum(i + 1);
           }, 1000);
           menu = 0;
         }}
@@ -84,6 +84,7 @@
     width: 30vw;
     filter: blur(5px);
     background-position: right;
+    backdrop-filter: blur(10px);
   }
 
   @media screen and (max-width: 1000px) {

@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import CenterColumnContext from "./centerColumnContext.svelte";
   export let slide, imgarr;
   const thoughts = [
@@ -13,6 +13,7 @@
   import Mimg3 from "../img/rainbow.png";
   import Mimg4 from "../img/cloudy.png";
   import Mimg5 from "../img/clouds.png";
+  import { onMount } from "svelte";
   const Mimgarr = [Mimg1, Mimg2, Mimg3, Mimg4, Mimg5];
   function moveImg(event) {
     let el = document.querySelector(".Mimgactive");
@@ -21,7 +22,68 @@
     el.style.top = b;
     el.style.left = a;
   }
+
+  const transitionend = () => {
+    if (backgrounds[slide].id === firstClone.id) {
+      bg.style.transition = "none";
+      slide = 1;
+      let pixelOffset = -bg.clientWidth;
+      bg.style.trasform = `translateX(${pixelOffset}px)`;
+    }
+    if (backgrounds[slide].id === lastClone.id) {
+      bg.style.transition = "none";
+      slide = backgrounds.length - 2;
+      let pixelOffset = -slide * bg.clientWidth;
+      bg.style.trasform = `translateX(${pixelOffset}px)`;
+    }
+  };
+  let bg;
+  let backgrounds = [];
+  let firstClone, lastClone;
+  let bgCount = 0;
+  onMount(() => {
+    bgCount = bg.length;
+    firstClone = backgrounds[1].cloneNode(true);
+    lastClone = backgrounds[5].cloneNode(true);
+    bg.prepend(lastClone);
+    bg.append(firstClone);
+    backgrounds[0] = lastClone;
+    backgrounds[bgCount] = firstClone;
+    bgCount = bg.length;
+  });
 </script>
+
+<svg
+  version="1.1"
+  id="Layer_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="0"
+  height="0"
+  viewBox="0 0 1366 768"
+  xml:space="preserve"
+>
+  <defs>
+    <filter id="blur0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0 0" />
+    </filter>
+    <filter id="blur1">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5 0" />
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12 0" />
+    </filter>
+    <filter id="blur3">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20 0" />
+    </filter>
+    <filter id="blur4">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35 1" />
+    </filter>
+    <filter id="blur5">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="50 1" />
+    </filter>
+  </defs>
+</svg>
 
 <div class="Container" on:mousemove={moveImg}>
   <div
@@ -47,14 +109,18 @@
     {/each}
   </div>
   <div
+    bind:this={bg}
     class="background-Container"
     style={`transform: translateX(-${400 - slide * 100}vw)`}
+    on:transitionend={transitionend}
   >
     {#each { length: 5 } as _, i}
       <img
-        class="bg {4 - slide == i ? 'active' : ' '}"
+        bind:this={backgrounds[i + 1]}
+        class="bg {4 - slide == i ? 'do-blur' : ' '}"
         src={imgarr[i]}
         alt="jpg"
+        id={i}
       />
     {/each}
   </div>
@@ -83,7 +149,7 @@
     min-width: 100.1vw;
     top: 0;
     z-index: -1;
-    transition: all 1s 0.2s;
+    transition: all 0.5s 0.2s;
     transition-timing-function: cubic-bezier(0, 0.5, 0.75, 1);
   }
   .mimg-Container > div {
@@ -111,7 +177,7 @@
     transition: all 1s;
     transform: translateX(-50%);
   }
-  .active {
+  /* .active {
     animation: change 1s 0.2s;
   }
   @keyframes change {
@@ -124,5 +190,38 @@
     100% {
       transform: scaleX(1);
     }
+  } */
+
+  @keyframes motion-blur {
+    0% {
+      filter: url(#blur0);
+      transform: scale(1, 1);
+    }
+    15% {
+      filter: url(#blur1);
+      transform: scale(1, 0.98);
+    }
+    30% {
+      filter: url(#blur2);
+      transform: scale(1, 0.93);
+    }
+    45% {
+      filter: url(#blur3);
+      transform: scale(1.1, 0.9);
+    }
+    60% {
+      filter: url(#blur4);
+      transform: scale(1.2, 0.88);
+    }
+    75%,
+    100% {
+      filter: url(#blur5);
+      transform: scale(1.35, 0.85);
+    }
   }
-</style>
+
+  .do-blur {
+    animation: motion-blur 0.1s linear forwards,
+      motion-blur 0.4s linear reverse forwards 0.1s;
+  }
+</style> -->

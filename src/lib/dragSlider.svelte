@@ -62,7 +62,6 @@
   let currentSlide = 1;
   let pixelOffset, slideCount;
   let firstClone, lastClone;
-  let circle;
   const transitionend = () => {
     if (slides[currentSlide].id === firstClone.id) {
       slide.style.transition = "none";
