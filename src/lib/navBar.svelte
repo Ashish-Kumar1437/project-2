@@ -13,6 +13,7 @@
   </div>
   <div class="col3">
     <a class="btn" href="/gallary">Go to Gallery</a>
+    <a class="btn" href="/form">Go to Form</a>
     <a class="btn" href="/">Go to Home</a>
   </div>
 </nav>
