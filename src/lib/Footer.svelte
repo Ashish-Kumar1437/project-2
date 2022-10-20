@@ -49,7 +49,7 @@
         <li>Legal Disclosure (Impressum)</li>
         <li>Privacy Policy (Datenschutz)</li>
         <li>Licensing</li>
-        <li>Blog</li>
+        <li><a href="/blogs">Blog</a></li>
         <li>Newsletter</li>
       </ul>
     </div>

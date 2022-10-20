@@ -12,9 +12,10 @@
     <span>Motion Blur Portfolio Showcase - Slider Template</span>
   </div>
   <div class="col3">
-    <a class="btn" href="/gallary">Go to Gallery</a>
-    <a class="btn" href="/form">Go to Form</a>
-    <a class="btn" href="/">Go to Home</a>
+    <a class="btn" href="/">Home</a>
+    <a class="btn" href="/gallary">Gallery</a>
+    <a class="btn" href="/form">Form</a>
+    <a class="btn" href="/blogs">Blog</a>
   </div>
 </nav>
 
